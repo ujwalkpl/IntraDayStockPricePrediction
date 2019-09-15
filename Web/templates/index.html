@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Stock price predictor
+		</title>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700" rel="stylesheet">
+  		<link rel="stylesheet" type="text/css" href="static/style.css">
+	</head>
+
+
+	<body>
+ 		<div class="login">
+			<h1>Stock Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    		<form action="{{ url_for('predict')}}"method="post">
+    			<label> Enter the date</label>
+    			<input type="date" name="Date" placeholder="Enter date " required="required" />
+        		<input type="number" name="Opening Price" placeholder="Enter opening price " required="required" />
+
+
+        		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    		</form>
+
+   			<br>
+   			<br>
+   			{{ prediction_text }}
+            <br>
+            {{ predictionprofit }}
+
+ 		</div>
+
+		<script>
+		function func(){
+    	var action_src = "http://localhost/" + document.getElementsByName("Date")[0].value + "/" + document.getElementsByName("lastName")[0].value;
+    	var your_form = document.getElementById('query');
+    	your_form.action = action_src ;
+		}
+		</script>
+
+	</body>
+</html>
