@@ -4,9 +4,22 @@ import pickle
 import datetime
 from datetime import date
 import calendar
+import re
+import tweepy
+from tweepy import OAuthHandler
+from textblob import TextBlob
 
+consumer_key='98BZ0GTagKkogxu7I9a6qWeog'
+consumer_secret='1MDm44bacisVOcmjvkqbnpAiyuoBRnHJHbz7ypZNH2Z0q59qbX'
+access_token='2892754940-l04SBrGF0IWDiV1zYp4ZMOIRpSryHna45JRV3fe'
+access_token_secret='tTJyJ3WLDh926gmjckZ7gIwF7Q0BBIK3R0sw1LHRJwWAk'
+auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+auth.set_access_token(access_token,access_token_secret)
+api=tweepy.API(auth,wait_on_rate_limit=True
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
+
+
 
 @app.route('/')
 def home():
@@ -17,6 +30,23 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
+    datea = request.form.values()
+
+    output1 = next(datea)
+    # public_tweets = api.search('Microsoft', count=10, date=, lang='en')
+    #
+    # pol = []
+    # var = 0
+    # type(public_tweets)
+    # for tww in public_tweets:
+    #     print(tww.text)
+    #     analysis = TextBlob(tww.text)
+    #     var = var + analysis.sentiment.polarity
+    # var = var / len(public_tweets)
+
+
+
+
     datea = request.form.values()
 
     output1 = next(datea)
