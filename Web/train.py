@@ -20,27 +20,16 @@ df['Month']=pd.DatetimeIndex(df['Date']).month
 
 df.drop(['High','Low','Adj Close','Volume'],axis=1,inplace=True);
 
-
-
-# from sklearn.linear_model import LinearRegression
-#
-# clfreg = LinearRegression(n_jobs=-1)
-# clfreg.fit(X_train, y_train)
-# pickle.dump(clfreg,open('model.pkl','wb'))
-# y_pred=clfreg.predict(X_test)
-# confidencereg = clfreg.score(X_test, y_test)
-# print(confidencereg)
-
 import re
 
 import tweepy
 from tweepy import OAuthHandler
 from textblob import TextBlob
 
-consumer_key='98BZ0GTagKkogxu7I9a6qWeog'
-consumer_secret='1MDm44bacisVOcmjvkqbnpAiyuoBRnHJHbz7ypZNH2Z0q59qbX'
-access_token='2892754940-l04SBrGF0IWDiV1zYp4ZMOIRpSryHna45JRV3fe'
-access_token_secret='tTJyJ3WLDh926gmjckZ7gIwF7Q0BBIK3R0sw1LHRJwWAk'
+consumer_key='XXXXXXXXXXXXXXXXXXXXXX'
+consumer_secret='XXXXXXXXXXXXXXXXXXXXXX'
+access_token='XXXXXXXXXXXXXXXXXXXXXX'
+access_token_secret='XXXXXXXXXXXXXXXXXXXXXX'
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 api=tweepy.API(auth,wait_on_rate_limit=True)
