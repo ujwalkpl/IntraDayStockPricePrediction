@@ -20,17 +20,6 @@ df['Month']=pd.DatetimeIndex(df['Date']).month
 
 df.drop(['High','Low','Adj Close','Volume'],axis=1,inplace=True);
 
-
-
-# from sklearn.linear_model import LinearRegression
-#
-# clfreg = LinearRegression(n_jobs=-1)
-# clfreg.fit(X_train, y_train)
-# pickle.dump(clfreg,open('model.pkl','wb'))
-# y_pred=clfreg.predict(X_test)
-# confidencereg = clfreg.score(X_test, y_test)
-# print(confidencereg)
-
 import re
 
 import tweepy
