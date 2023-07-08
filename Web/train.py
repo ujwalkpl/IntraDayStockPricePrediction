@@ -26,13 +26,6 @@ import tweepy
 from tweepy import OAuthHandler
 from textblob import TextBlob
 
-consumer_key='XXXXXXXXXXXXXXXXXXXXXX'
-consumer_secret='XXXXXXXXXXXXXXXXXXXXXX'
-access_token='XXXXXXXXXXXXXXXXXXXXXX'
-access_token_secret='XXXXXXXXXXXXXXXXXXXXXX'
-auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
-auth.set_access_token(access_token,access_token_secret)
-api=tweepy.API(auth,wait_on_rate_limit=True)
 
 for ind in df.index:
     public_tweets = api.search('Microsoft', count=10, date=df['Date'][ind], lang='en')
